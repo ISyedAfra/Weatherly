@@ -26,7 +26,7 @@ async function searchcity() {
 
 }
 function loadurl(c) {
-  return `/.netlify/functions/weather?city=${encodeURIComponent(c)}`;
+  return  `https://weatherlyapp2025.netlify.app/.netlify/functions/weather?city=${encodeURIComponent(c)}`;
 }
 async function fetchweather(url) {
   try {
@@ -93,7 +93,7 @@ async function success(position) {
   document.querySelector(".card").classList.add("show");
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `/.netlify/functions/weather?lat=${lat}&lon=${lon}`;
+  const url = `https://weatherlyapp2025.netlify.app/.netlify/functions/weather?lat=${lat}&lon=${lon}`;
   const data = await fetchweather(url);
   renderweather(data);
 
