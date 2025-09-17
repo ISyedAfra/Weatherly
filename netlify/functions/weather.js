@@ -12,6 +12,9 @@ export async function handler(event) {
   } else {
     return {
       statusCode: 400,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // allow GitHub Pages
+      },
       body: JSON.stringify({ error: "City or coordinates required" }),
     };
   }
@@ -22,11 +25,17 @@ export async function handler(event) {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // allow GitHub Pages
+      },
       body: JSON.stringify(data),
     };
   } catch (err) {
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*", // allow GitHub Pages
+      },
       body: JSON.stringify({ error: "Failed to fetch weather" }),
     };
   }
