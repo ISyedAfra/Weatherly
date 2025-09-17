@@ -1,3 +1,4 @@
+const units = "metric";
 cityinp = document.getElementById("cityinp");
 search = document.getElementById("search")
 loc = document.getElementById("loc")
